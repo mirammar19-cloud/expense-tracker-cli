@@ -1,12 +1,15 @@
 from utils import add_expense
 from utils import view_expense
 from utils import total_expense
+from utils import category_insights
+
 
 def main():
     print("---EXPENSE TRACKER---")
     print("1. Add Expense")
     print("2. View Expense")
     print("3. Total Expense")
+    print("4. Category Insights")
     choice = int(input("Enter Preffered Choice: "))
 
     if choice == 1:
@@ -27,6 +30,12 @@ def main():
     elif choice == 3:
         total = total_expense()
         print(f"TOTAL: ${total:,.2f}")
+    elif choice == 4:
+        insights = category_insights()
+        print("---Category Insights---")
+
+        for cat, total in insights.items():
+            print(f"Category : {cat:<12} Total : {float(total):,.2f}")
     else:
         exit
 

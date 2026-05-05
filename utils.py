@@ -23,3 +23,23 @@ def total_expense():
         for row in reader:
             total += float(row[0])
         return total
+
+
+def category_insights():
+    cat_totals = {}
+
+    with open(file_path,"r") as file:
+        reader = csv.reader(file)
+
+        for row in reader:
+            amount = float(row[0])
+            category = row[1]
+
+            if category in cat_totals:
+                cat_totals[category] += amount
+            else:
+                cat_totals[category] = amount
+        
+    return cat_totals
+
+    
