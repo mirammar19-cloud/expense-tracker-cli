@@ -16,3 +16,10 @@ def view_expense():
             rows.append(row)
         return rows
     
+def total_expense():
+    with open(file_path,"r") as file:
+        reader = csv.reader(file)
+        total = 0
+        for row in reader:
+            total += float(row[0])
+        return total

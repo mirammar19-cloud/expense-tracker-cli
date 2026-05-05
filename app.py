@@ -1,11 +1,12 @@
 from utils import add_expense
 from utils import view_expense
+from utils import total_expense
 
 def main():
     print("---EXPENSE TRACKER---")
     print("1. Add Expense")
     print("2. View Expense")
-    #print("1. Add Expense")
+    print("3. Total Expense")
     choice = int(input("Enter Preffered Choice: "))
 
     if choice == 1:
@@ -23,6 +24,9 @@ def main():
         for row in output:
             amt,cat,_date = row
             print(f" AMOUNT : ${amt:<12}CATEGORY : {cat:<12}DATE : {_date}")
+    elif choice == 3:
+        total = total_expense()
+        print(f"TOTAL: ${total:,.2f}")
     else:
         exit
 
