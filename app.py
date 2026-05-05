@@ -1,10 +1,14 @@
 from utils import add_expense
+from utils import view_expense
 
 def main():
     print("---EXPENSE TRACKER---")
-    choice = input("Would you like to proceed?(y/n): ")
+    print("1. Add Expense")
+    print("2. View Expense")
+    #print("1. Add Expense")
+    choice = int(input("Enter Preffered Choice: "))
 
-    if choice == "y":
+    if choice == 1:
         try:
             amount = float(input("Enter Amount:$ "))
             category = input("Enter Category: ")
@@ -14,6 +18,11 @@ def main():
             print("Expense added successfully!")
         except(ValueError):
             print("Invalid input. Amount must be a number!")
+    elif choice == 2:
+        output = view_expense()
+        for row in output:
+            amt,cat,_date = row
+            print(f" AMOUNT : ${amt:<12}CATEGORY : {cat:<12}DATE : {_date}")
     else:
         exit
 
