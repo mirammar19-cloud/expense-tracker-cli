@@ -2,6 +2,7 @@ from utils import add_expense
 from utils import view_expense
 from utils import total_expense
 from utils import category_insights
+import matplotlib.pyplot as plt
 
 
 def main():
@@ -10,6 +11,7 @@ def main():
     print("2. View Expense")
     print("3. Total Expense")
     print("4. Category Insights")
+    print("5. View Charts")
     choice = int(input("Enter Preffered Choice: "))
 
     if choice == 1:
@@ -36,6 +38,18 @@ def main():
 
         for cat, total in insights.items():
             print(f"Category : {cat:<12} Total : {float(total):,.2f}")
+    elif choice == 5:
+        insights = category_insights()
+
+        category = list(insights.keys())
+        values = list(insights.values())
+
+        plt.bar(category, values)
+        plt.title("Expenses by Category")
+        plt.xlabel("Category")
+        plt.ylabel("Amount")
+        plt.show()
+    
     else:
         exit
 
