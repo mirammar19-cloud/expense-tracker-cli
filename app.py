@@ -23,7 +23,7 @@ def main():
         output = view_expense()
         for row in output:
             amt,cat,_date = row
-            print(f" AMOUNT : ${amt:<12}CATEGORY : {cat:<12}DATE : {_date}")
+            print(f" AMOUNT : ${float(amt):<12,.2f}CATEGORY : {cat:<12}DATE : {_date}")
     elif choice == 3:
         total = total_expense()
         print(f"TOTAL: ${total:,.2f}")
