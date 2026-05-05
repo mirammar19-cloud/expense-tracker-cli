@@ -12,6 +12,7 @@ def main():
     print("3. Total Expense")
     print("4. Category Insights")
     print("5. View Charts")
+    print("0. Exit")
     choice = int(input("Enter Preffered Choice: "))
 
     if choice == 1:
