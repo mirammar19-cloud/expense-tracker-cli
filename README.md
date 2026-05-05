@@ -7,8 +7,6 @@ A Python-based CLI application to track, analyze, and visualize personal expense
 - View formatted expense history
 - Calculate total spending
 - Category-wise insights
-- Monthly spending filter
-- Budget checking system
 - Data visualization using matplotlib
 
 ## Tech Stack
